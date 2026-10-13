@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06101c">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ZAGFORGE — Admin Control Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <section class="auth-view" id="authView">
+      <div class="auth-card">
+        <div class="brand-row"><span class="brand-mark">Z</span><div><b>ZAGFORGE</b><span>ADMIN CONTROL CENTER</span></div></div>
+        <p class="eyebrow">Private workspace</p>
+        <h1>Control the portfolio.<br><span>Own the inbox.</span></h1>
+        <p class="muted">Sign in to manage projects, services, settings, and client inquiries stored by the ZAGFORGE backend.</p>
+        <form id="loginForm" class="panel-form" novalidate>
+          <label>Email<input type="email" name="email" autocomplete="username" placeholder="admin@example.com" required></label>
+          <label>Password<input type="password" name="password" autocomplete="current-password" placeholder="Your password" required></label>
+          <button class="primary-button" type="submit">Enter dashboard <span>↗</span></button>
+          <p id="loginStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+        <a class="back-link" href="/">← Back to public portfolio</a>
+      </div>
+      <div class="auth-art" aria-hidden="true"><div class="ring ring-one"></div><div class="ring ring-two"></div><div class="orb"></div><div class="code-block"><span>auth</span><b>session</b><i>secured</i><em>sqlite</em></div></div>
+    </section>
+
+    <section class="dashboard-view hidden" id="dashboardView">
+      <header class="admin-header">
+        <a class="brand-row" href="/"><span class="brand-mark">Z</span><div><b>ZAGFORGE</b><span>ADMIN CONTROL CENTER</span></div></a>
+        <div class="admin-actions"><a class="ghost-button" href="/" target="_blank" rel="noreferrer">View site ↗</a><button class="ghost-button" id="logoutButton" type="button">Log out</button></div>
+      </header>
+
+      <main class="dashboard-main">
+        <div class="welcome-row"><div><p class="eyebrow">Control center</p><h1>Operate the <span>system.</span></h1><p class="muted" id="sessionLabel">Authenticated admin session.</p></div><div class="admin-badges"><div class="server-pill"><span></span> DATABASE ONLINE</div><div class="private-pill">PRIVATE ADMIN</div></div></div>
+        <div class="kpi-grid" id="kpiGrid"><article><small>CLIENT LEADS</small><strong>—</strong><span>Total inquiries</span></article><article><small>NEW</small><strong>—</strong><span>Unread opportunities</span></article><article><small>PROJECTS</small><strong>—</strong><span>Published records</span></article><article><small>30D VIEWS</small><strong>—</strong><span>Private anonymous page views</span></article></div>
+
+        <section class="panel lead-panel">
+          <div class="panel-head"><div><p class="eyebrow">Lead desk</p><h2>Client inquiries</h2></div><div class="panel-head-actions"><a class="small-button" href="/api/admin/inquiries.csv" id="exportCsvButton">Export CSV</a><button class="small-button" id="backupButton" type="button">Download backup</button><select id="inquiryFilter"><option value="">All statuses</option><option value="new">New</option><option value="contacted">Contacted</option><option value="qualified">Qualified</option><option value="closed">Closed</option></select></div>
+          <div class="table-wrap"><table><thead><tr><th>Lead</th><th>Brief</th><th>Budget</th><th>Status</th><th>Received</th><th></th></tr></thead><tbody id="inquiryTable"></tbody></table></div>
+        </section>
+
+        <section class="panel analytics-panel"><div class="panel-head"><div><p class="eyebrow">Private analytics</p><h2>Portfolio pulse</h2></div><select id="analyticsRange"><option value="7">7 days</option><option value="30" selected>30 days</option><option value="90">90 days</option></select></div><div class="analytics-summary" id="analyticsSummary"></div><div class="analytics-chart" id="analyticsChart"></div><p class="hint analytics-note">Counts are stored as daily totals only. No visitor names, IP addresses, or browsing profiles are saved by this analytics layer.</p></section>
+
+<section class="content-grid">
+          <div class="panel">
+            <div class="panel-head"><div><p class="eyebrow">Portfolio CMS</p><h2>Projects</h2></div><button class="small-button" id="newProjectButton" type="button">+ Add project</button></div>
+            <div id="projectList" class="card-list"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><p class="eyebrow">Offer catalog</p><h2>Services</h2></div><button class="small-button" id="newServiceButton" type="button">+ Add service</button></div>
+            <div id="serviceList" class="card-list"></div>
+          </div>
+        </section>
+
+        <section class="content-grid"><div class="panel"><div class="panel-head"><div><p class="eyebrow">Proof CMS</p><h2>Testimonials</h2></div><button class="small-button" id="newTestimonialButton" type="button">+ Add testimonial</button></div><div id="testimonialList" class="card-list"></div></div><div class="panel"><div class="panel-head"><div><p class="eyebrow">Objection handling</p><h2>FAQ</h2></div><button class="small-button" id="newFaqButton" type="button">+ Add FAQ</button></div><div id="faqAdminList" class="card-list"></div></div></section>
+
+        <section class="content-grid">
+          <div class="panel form-panel">
+            <div class="panel-head"><div><p class="eyebrow">Site controls</p><h2>Public settings</h2></div></div>
+            <form id="settingsForm" class="panel-form">
+                            <div class="settings-section-title"><span>01</span><div><b>Profile identity</b><small>Control the person visitors see in your About section.</small></div></div>
+              <div class="profile-upload-row"><div class="admin-photo-preview"><img id="adminProfilePreview" alt="Profile photo preview" hidden><span id="adminProfileFallback">ZS</span></div><div class="profile-upload-controls"><label>Profile photo<input id="profilePhotoFile" type="file" accept="image/png,image/jpeg,image/webp"></label><div class="inline-controls"><button class="small-button" id="uploadProfilePhotoButton" type="button">Upload photo</button><button class="small-button subtle-button" id="removeProfilePhotoButton" type="button">Remove photo</button></div><small class="hint">PNG, JPG or WebP · up to 4 MB. Your image is saved on this server.</small></div></div>
+              <label>Or use a hosted image URL<input name="profile_image" type="text" inputmode="url" placeholder="https://example.com/your-photo.jpg or /uploads/photo.jpg"></label>
+              <div class="form-row"><label>Your name<input name="profile_name" placeholder="Your full name" maxlength="120"></label><label>Professional title<input name="profile_title" placeholder="Software Engineering Student · Web Developer" maxlength="160"></label></div>
+              <label>Short profile introduction<textarea name="profile_bio" rows="3" maxlength="1200" placeholder="A short, professional introduction about you."></textarea></label>
+              <div class="settings-section-title"><span>02</span><div><b>Contact & social links</b><small>Paste full URLs or domains. Common links without https:// are accepted.</small></div></div>
+              <div class="form-row"><label>Availability label<input name="availability"></label><label>Response time<input name="response_time"></label></div><div class="form-row"><label>Location<input name="location"></label><label>Contact email<input name="contact_email" type="email" required></label></div>
+              <div class="form-row"><label>GitHub<input name="social_github" type="text" inputmode="url" placeholder="github.com/username"></label><label>LinkedIn<input name="social_linkedin" type="text" inputmode="url" placeholder="linkedin.com/in/username"></label></div>
+              <div class="form-row"><label>Upwork<input name="social_upwork" type="text" inputmode="url" placeholder="upwork.com/freelancers/~…"></label><label>Booking / calendar link<input name="calendly_url" type="text" inputmode="url" placeholder="cal.com/username"></label></div>
+              <label>Extra public links <small>One per line, format: Label | URL. Supports portfolio, X, Instagram, YouTube, Medium, certificates, Discord, or other HTTPS links.</small><textarea name="social_links" rows="5" placeholder="LinkedIn | https://linkedin.com/in/yourname&#10;Certificates | https://example.com/certificates&#10;YouTube | youtube.com/@yourchannel"></textarea></label>
+              <div class="settings-section-title"><span>03</span><div><b>Search & announcement</b><small>Keep public metadata and availability current.</small></div></div>
+              <div class="form-row"><label>Meta title<input name="meta_title"></label><label>Meta description<input name="meta_description"></label></div><label>Announcement<input name="announcement"></label><div class="form-row"><label class="check-label"><input name="show_announcement" type="checkbox" value="true"> Show announcement bar</label><label class="check-label"><input name="show_availability" type="checkbox" value="true"> Show availability chip</label></div>
+              <label>Default public theme<select name="theme_default"><option value="forge">Forge — Cyan Tech</option><option value="matrix">Matrix — Neon Green</option><option value="violet">Violet — Creative</option><option value="ember">Ember — Warm Tech</option><option value="pearl">Pearl — Light</option></select></label>
+              <p class="hint">This controls the default theme for new visitors. A visitor's own theme choice stays on their device.</p>
+              <button class="primary-button" type="submit">Save public settings <span>↗</span></button>
+              <p id="settingsStatus" class="status" role="status"></p>
+            </form>
+          </div>
+          <div class="panel form-panel">
+            <div class="panel-head"><div><p class="eyebrow">Security</p><h2>Change password</h2></div></div>
+            <form id="passwordForm" class="panel-form">
+              <label>Current password<input name="currentPassword" type="password" autocomplete="current-password" required></label>
+              <label>New password<input name="newPassword" type="password" autocomplete="new-password" minlength="12" required></label>
+              <p class="hint">Use at least 12 characters. The password is hashed with scrypt and never stored as plain text.</p>
+              <button class="ghost-button wide" type="submit">Rotate admin password</button>
+              <p id="passwordStatus" class="status" role="status"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <dialog class="edit-modal" id="projectModal"><form method="dialog" class="modal-card" id="projectForm"><div class="modal-head"><div><p class="eyebrow">Portfolio CMS</p><h2 id="projectModalTitle">New project</h2></div><button class="icon-button" value="cancel" type="submit">×</button></div><input type="hidden" name="id"><div class="form-row"><label>Title<input name="title" required maxlength="120"></label><label>Category<input name="category" required maxlength="80"></label></div><label>Description<textarea name="description" rows="4" required maxlength="500"></textarea></label><div class="form-row"><label>Tags <small>comma separated</small><input name="tags" placeholder="HTML, CSS, JavaScript"></label><label>Status<input name="status" value="Concept / portfolio build" required></label></div><div class="form-row"><label>Preview style<select name="preview_style"><option value="music">Music</option><option value="business">Business</option><option value="dashboard">Dashboard</option></select></label><label>Demo URL<input name="demo_url" value="#"></label></div><div class="form-row"><label>Role<input name="role" maxlength="120" placeholder="Frontend developer"></label><label>Duration<input name="duration" maxlength="80" placeholder="2 weeks"></label></div><div class="form-row"><label>Outcome<input name="outcome" maxlength="300"></label><label>Sort order<input name="sort_order" type="number" value="1"></label></div><label>Case study<textarea name="case_study" rows="5" maxlength="1800" placeholder="What did you build, why, and what was the result?"></textarea></label><label class="check-label"><input name="featured" type="checkbox"> Featured card</label><div class="modal-actions"><button class="ghost-button" value="cancel" type="submit">Cancel</button><button class="primary-button" value="default" type="submit">Save project <span>↗</span></button></div><p id="projectStatus" class="status"></p></form></dialog>
+  <dialog class="edit-modal" id="serviceModal"><form method="dialog" class="modal-card" id="serviceForm"><div class="modal-head"><div><p class="eyebrow">Offer catalog</p><h2 id="serviceModalTitle">New service</h2></div><button class="icon-button" value="cancel" type="submit">×</button></div><input type="hidden" name="id"><label>Title<input name="title" required maxlength="120"></label><label>Description<textarea name="description" rows="4" required maxlength="500"></textarea></label><div class="form-row"><label>CTA label<input name="cta" required value="Discuss a project"></label><label>Sort order<input name="sort_order" type="number" value="1"></label></div><div class="modal-actions"><button class="ghost-button" value="cancel" type="submit">Cancel</button><button class="primary-button" value="default" type="submit">Save service <span>↗</span></button></div><p id="serviceStatus" class="status"></p></form></dialog>
+
+  <dialog class="edit-modal" id="testimonialModal"><form method="dialog" class="modal-card" id="testimonialForm"><div class="modal-head"><div><p class="eyebrow">Proof CMS</p><h2 id="testimonialModalTitle">New testimonial</h2></div><button class="icon-button" value="cancel" type="submit">×</button></div><input type="hidden" name="id"><div class="form-row"><label>Name<input name="name" required maxlength="120"></label><label>Role<input name="role" required maxlength="120"></label></div><div class="form-row"><label>Company<input name="company" maxlength="120"></label><label>Initials<input name="initials" maxlength="8" placeholder="AB"></label></div><label>Quote<textarea name="quote" rows="5" required maxlength="700"></textarea></label><div class="form-row"><label>Sort order<input name="sort_order" type="number" value="1"></label><label class="check-label"><input name="featured" type="checkbox"> Show publicly</label></div><div class="modal-actions"><button class="ghost-button" value="cancel" type="submit">Cancel</button><button class="primary-button" value="default" type="submit">Save testimonial <span>↗</span></button></div><p id="testimonialStatus" class="status"></p></form></dialog>
+  <dialog class="edit-modal" id="faqModal"><form method="dialog" class="modal-card" id="faqForm"><div class="modal-head"><div><p class="eyebrow">FAQ CMS</p><h2 id="faqModalTitle">New FAQ</h2></div><button class="icon-button" value="cancel" type="submit">×</button></div><input type="hidden" name="id"><label>Question<input name="question" required maxlength="180"></label><label>Answer<textarea name="answer" rows="6" required maxlength="1000"></textarea></label><label>Sort order<input name="sort_order" type="number" value="1"></label><div class="modal-actions"><button class="ghost-button" value="cancel" type="submit">Cancel</button><button class="primary-button" value="default" type="submit">Save FAQ <span>↗</span></button></div><p id="faqStatus" class="status"></p></form></dialog>
+  <script src="admin.js"></script>
+</body>
+</html>

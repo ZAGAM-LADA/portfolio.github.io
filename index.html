@@ -1,0 +1,210 @@
+<!doctype html> <!-- source line 1: see README.md for architecture and behavior. -->
+<html lang="en"> <!-- source line 2: see README.md for architecture and behavior. -->
+<head> <!-- source line 3: see README.md for architecture and behavior. -->
+  <meta charset="utf-8"> <!-- source line 4: see README.md for architecture and behavior. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Premium ZAGFORGE software engineering portfolio — responsive websites, interactive interfaces, and practical full-stack foundations.">
+  <meta name="theme-color" content="#050b12">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ZAGFORGE — Modern web development">
+  <meta property="og:description" content="Responsive websites, landing pages, JavaScript interfaces, and practical full-stack foundations.">
+  <meta property="og:site_name" content="ZAGFORGE">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="/"> <!-- source line 5: see README.md for architecture and behavior. -->
+  <title>ZAGFORGE — Web Developer Portfolio</title> <!-- source line 11: see README.md for architecture and behavior. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- source line 12: see README.md for architecture and behavior. -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- source line 13: see README.md for architecture and behavior. -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"> <!-- source line 14: see README.md for architecture and behavior. -->
+  <link rel="stylesheet" href="styles.css"> <!-- source line 15: see README.md for architecture and behavior. -->
+</head> <!-- source line 16: see README.md for architecture and behavior. -->
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="announcement-bar" id="announcementBar"><div class="shell"><span class="announcement-dot"></span><span id="announcementText">Now building selected portfolio projects and client-ready web experiences.</span><button id="announcementDismiss" type="button" aria-label="Dismiss announcement">×</button></div></div> <!-- source line 17: see README.md for architecture and behavior. -->
+  <div class="page-noise" aria-hidden="true"></div> <!-- source line 18: see README.md for architecture and behavior. -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div> <!-- source line 19: see README.md for architecture and behavior. -->
+  <header class="site-header" id="top"> <!-- source line 20: see README.md for architecture and behavior. -->
+    <nav class="nav shell" aria-label="Primary navigation"> <!-- source line 21: see README.md for architecture and behavior. -->
+      <a class="brand" href="#top" aria-label="ZAGFORGE home"> <!-- source line 22: see README.md for architecture and behavior. -->
+        <span class="brand-mark">Z</span> <!-- source line 23: see README.md for architecture and behavior. -->
+        <span class="brand-name">ZAGFORGE<span class="brand-dot">.</span></span> <!-- source line 24: see README.md for architecture and behavior. -->
+      </a> <!-- source line 25: see README.md for architecture and behavior. -->
+      <div class="nav-status"><span class="status-dot"></span> <span>Available</span></div> <!-- source line 26: see README.md for architecture and behavior. -->
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"> <!-- source line 27: see README.md for architecture and behavior. -->
+        <span></span><span></span> <!-- source line 28: see README.md for architecture and behavior. -->
+      </button> <!-- source line 29: see README.md for architecture and behavior. -->
+      <div class="nav-links" id="navLinks"> <!-- source line 30: see README.md for architecture and behavior. -->
+        <a href="#work">Work</a> <!-- source line 31: see README.md for architecture and behavior. -->
+        <a href="#services">Services</a> <!-- source line 32: see README.md for architecture and behavior. -->
+        <a href="#process">Process</a> <!-- source line 33: see README.md for architecture and behavior. -->
+        <a href="#about">About</a> <!-- source line 34: see README.md for architecture and behavior. -->
+        <a class="nav-cta" href="#contact">Start a project <span>↗</span></a> <!-- source line 35: see README.md for architecture and behavior. -->
+        <div class="availability-chip" id="availabilityChip"><span class="status-dot"></span><span id="availabilityText">Open for selected work</span></div>
+        <div class="theme-switcher" id="themeSwitcher"> <!-- Public theme selector; the saved visitor preference stays in localStorage. -->
+          <button class="theme-button" id="themeButton" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="themeMenu"><span class="theme-dot"></span><span>Theme</span><b>⌄</b></button>
+          <div class="theme-menu" id="themeMenu" role="menu" aria-label="Choose visual theme">
+            <button type="button" role="menuitem" data-theme="forge"><span class="theme-swatch swatch-forge"></span>Forge</button>
+            <button type="button" role="menuitem" data-theme="matrix"><span class="theme-swatch swatch-matrix"></span>Matrix</button>
+            <button type="button" role="menuitem" data-theme="violet"><span class="theme-swatch swatch-violet"></span>Violet</button>
+            <button type="button" role="menuitem" data-theme="ember"><span class="theme-swatch swatch-ember"></span>Ember</button>
+            <button type="button" role="menuitem" data-theme="pearl"><span class="theme-swatch swatch-pearl"></span>Pearl</button>
+          </div>
+        </div>
+      </div> <!-- source line 36: see README.md for architecture and behavior. -->
+    </nav> <!-- source line 37: see README.md for architecture and behavior. -->
+  </header> <!-- source line 38: see README.md for architecture and behavior. -->
+<!-- source line 39: spacing kept for readability. -->
+  <main id="main-content"> <!-- source line 40: see README.md for architecture and behavior. -->
+    <section class="hero shell" aria-labelledby="hero-title"> <!-- source line 41: see README.md for architecture and behavior. -->
+      <div class="hero-copy reveal"> <!-- source line 42: see README.md for architecture and behavior. -->
+        <p class="eyebrow"><span class="status-dot"></span> WEB DEVELOPMENT · UI · JAVASCRIPT</p> <!-- source line 43: see README.md for architecture and behavior. -->
+        <h1 id="hero-title">Digital experiences<br><span class="accent-text">built to be remembered.</span></h1> <!-- source line 44: see README.md for architecture and behavior. -->
+        <p class="hero-text">I build modern, responsive websites that make a business look credible, explain its value quickly, and guide visitors toward the next action.</p> <!-- source line 45: see README.md for architecture and behavior. -->
+        <div class="hero-actions"> <!-- source line 46: see README.md for architecture and behavior. -->
+          <a class="button button-primary" href="#work">View selected work <span>↓</span></a> <!-- source line 47: see README.md for architecture and behavior. -->
+          <a class="button button-ghost" href="#contact">Send a project brief <span>↗</span></a> <!-- source line 48: see README.md for architecture and behavior. -->
+        </div> <!-- source line 49: see README.md for architecture and behavior. -->
+        <div class="hero-proof"> <!-- source line 50: see README.md for architecture and behavior. -->
+          <div><strong>01</strong><span>Responsive by default</span></div> <!-- source line 51: see README.md for architecture and behavior. -->
+          <div><strong>02</strong><span>Clean frontend structure</span></div> <!-- source line 52: see README.md for architecture and behavior. -->
+          <div><strong>03</strong><span>Client-ready presentation</span></div> <!-- source line 53: see README.md for architecture and behavior. -->
+        </div> <!-- source line 54: see README.md for architecture and behavior. -->
+      </div> <!-- source line 55: see README.md for architecture and behavior. -->
+<!-- source line 56: spacing kept for readability. -->
+      <div class="hero-stage reveal delay-1" aria-label="Decorative developer workspace preview"> <!-- source line 57: see README.md for architecture and behavior. -->
+        <div class="stage-glow glow-one"></div> <!-- source line 58: see README.md for architecture and behavior. -->
+        <div class="stage-glow glow-two"></div> <!-- source line 59: see README.md for architecture and behavior. -->
+        <div class="grid-plane"></div> <!-- source line 60: see README.md for architecture and behavior. -->
+        <div class="floating-label label-a"><span>01</span> UI SYSTEM</div> <!-- source line 61: see README.md for architecture and behavior. -->
+        <div class="floating-label label-b"><span>02</span> FRONTEND</div> <!-- source line 62: see README.md for architecture and behavior. -->
+        <div class="workspace-card scroll-border-target"> <!-- source line 63: see README.md for architecture and behavior. -->
+          <div class="window-bar"><span></span><span></span><span></span><small>zagforge / interface.js</small></div> <!-- source line 64: see README.md for architecture and behavior. -->
+          <div class="workspace-body"> <!-- source line 65: see README.md for architecture and behavior. -->
+            <div class="code-line"><b>01</b><span class="tok-key">const</span> <span class="tok-var">experience</span> <span class="tok-op">=</span> <span class="tok-brace">{</span></div> <!-- source line 66: see README.md for architecture and behavior. -->
+            <div class="code-line indent"><b>02</b><span class="tok-prop">clarity</span><span class="tok-op">:</span> <span class="tok-str">"high"</span><span class="tok-op">,</span></div> <!-- source line 67: see README.md for architecture and behavior. -->
+            <div class="code-line indent"><b>03</b><span class="tok-prop">responsive</span><span class="tok-op">:</span> <span class="tok-bool">true</span><span class="tok-op">,</span></div> <!-- source line 68: see README.md for architecture and behavior. -->
+            <div class="code-line indent"><b>04</b><span class="tok-prop">interaction</span><span class="tok-op">:</span> <span class="tok-str">"intentional"</span><span class="tok-op">,</span></div> <!-- source line 69: see README.md for architecture and behavior. -->
+            <div class="code-line indent"><b>05</b><span class="tok-prop">delivery</span><span class="tok-op">:</span> <span class="tok-str">"clean"</span></div> <!-- source line 70: see README.md for architecture and behavior. -->
+            <div class="code-line"><b>06</b><span class="tok-brace">}</span><span class="tok-op">;</span></div> <!-- source line 71: see README.md for architecture and behavior. -->
+          </div> <!-- source line 72: see README.md for architecture and behavior. -->
+          <div class="workspace-footer"><span>HTML</span><span>CSS</span><span>JS</span><span class="footer-state">READY</span></div> <!-- source line 73: see README.md for architecture and behavior. -->
+        </div> <!-- source line 74: see README.md for architecture and behavior. -->
+        <div class="metric-card scroll-border-target metric-a"><span class="metric-icon">✦</span><div><b>Visual systems</b><small>Hierarchy first</small></div></div> <!-- source line 75: see README.md for architecture and behavior. -->
+        <div class="metric-card scroll-border-target metric-b"><div class="metric-ring">↗</div><div><b>Responsive</b><small>Mobile → desktop</small></div></div> <!-- source line 76: see README.md for architecture and behavior. -->
+      </div> <!-- source line 77: see README.md for architecture and behavior. -->
+    </section> <!-- source line 78: see README.md for architecture and behavior. -->
+<!-- source line 79: spacing kept for readability. -->
+    <section class="ticker shell reveal" aria-label="Core capabilities"> <!-- source line 80: see README.md for architecture and behavior. -->
+      <span>Built for real client needs</span> <!-- source line 81: see README.md for architecture and behavior. -->
+      <div class="ticker-track"><b>LANDING PAGES</b><i>•</i><b>BUSINESS WEBSITES</b><i>•</i><b>FRONTEND UI</b><i>•</i><b>JAVASCRIPT</b><i>•</i><b>RESPONSIVE DESIGN</b></div> <!-- source line 82: see README.md for architecture and behavior. -->
+    </section> <!-- source line 83: see README.md for architecture and behavior. -->
+<!-- source line 84: spacing kept for readability. -->
+    <section class="section shell" id="work"> <!-- source line 85: see README.md for architecture and behavior. -->
+      <div class="section-heading reveal"> <!-- source line 86: see README.md for architecture and behavior. -->
+        <div><p class="eyebrow">Selected work</p><h2>Proof of <span class="accent-text">capability.</span></h2></div> <!-- source line 87: see README.md for architecture and behavior. -->
+        <p>These are presentation-ready concepts. Replace demo links, screenshots, and copy with your strongest real projects before sending the portfolio to clients.</p> <!-- source line 88: see README.md for architecture and behavior. -->
+      </div> <!-- source line 89: see README.md for architecture and behavior. -->
+      <div class="project-toolbar"><div class="filter-pills" id="projectFilters" role="toolbar" aria-label="Filter projects"></div><button class="text-button" id="openCommandButton" type="button">⌘ K <span>Quick navigation</span></button></div>
+      <div class="project-grid" id="projectGrid" aria-live="polite">
+        <article class="project-card scroll-border-target featured reveal">
+          <div class="project-preview preview-music"><div class="mock-browser"><span></span><span></span><span></span><b>music.app</b></div><div class="music-ui"><div class="album"></div><div class="track-lines"><i></i><i></i><i></i><i></i></div></div><div class="player"><span>◀</span><span class="play">▶</span><span>▶</span><div class="scrub"><i></i></div><small>03:42</small></div></div>
+          <div class="project-meta"><span>WEB APP CONCEPT</span><span>01</span></div><h3>Music Streaming Interface</h3><p>A polished media interface concept with clear navigation, player states, visual hierarchy, and responsive behavior.</p><div class="project-foot"><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><span class="project-status">Concept / portfolio build</span></div>
+        </article>
+        <article class="project-card scroll-border-target reveal delay-1"><div class="project-preview preview-business"><div class="biz-top"><b>NORTH/</b><span>MENU</span></div><div class="biz-copy"><small>CREATIVE STUDIO</small><strong>Make your<br>next move<br><em>visible.</em></strong><div class="mini-button">View case study →</div></div><div class="biz-shape"></div></div><div class="project-meta"><span>BUSINESS WEBSITE</span><span>02</span></div><h3>Conversion-focused Landing Page</h3><p>A visual system for a service brand with strong hierarchy, focused messaging, and clear CTA placement.</p><div class="project-foot"><div class="tags"><span>Responsive</span><span>UI Design</span><span>CSS</span></div><span class="project-status">Concept / portfolio build</span></div></article>
+        <article class="project-card scroll-border-target reveal delay-2"><div class="project-preview preview-dashboard"><div class="dash-head"><span>OVERVIEW</span><i></i></div><div class="dash-stats"><div><small>PROJECTS</small><b>04</b></div><div><small>STATUS</small><b>ACTIVE</b></div></div><div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="dash-foot"><span></span><span></span><span></span></div></div><div class="project-meta"><span>DASHBOARD UI</span><span>03</span></div><h3>Analytics Dashboard Interface</h3><p>A dashboard concept focused on data hierarchy, compact components, and a responsive layout ready for backend integration.</p><div class="project-foot"><div class="tags"><span>JavaScript</span><span>Components</span><span>UX</span></div><span class="project-status">Concept / portfolio build</span></div></article>
+      </div>
+    </section> <!-- source line 128: see README.md for architecture and behavior. -->
+<!-- source line 129: spacing kept for readability. -->
+    <section class="section services-section" id="services"> <!-- source line 130: see README.md for architecture and behavior. -->
+      <div class="shell"> <!-- source line 131: see README.md for architecture and behavior. -->
+        <div class="section-heading reveal"> <!-- source line 132: see README.md for architecture and behavior. -->
+          <div><p class="eyebrow">Services</p><h2>Focused work.<br><span class="accent-text">Clear outcomes.</span></h2></div> <!-- source line 133: see README.md for architecture and behavior. -->
+          <p>Start with services you can confidently deliver today. Add advanced offerings only as your portfolio and experience support them.</p> <!-- source line 134: see README.md for architecture and behavior. -->
+        </div> <!-- source line 135: see README.md for architecture and behavior. -->
+        <div class="service-grid" id="serviceGrid" aria-live="polite">
+          <article class="service scroll-border-target reveal"><span class="service-number">01</span><h3>Responsive websites</h3><p>Modern layouts that adapt cleanly across phones, tablets, laptops, and large displays.</p><a href="#contact">Discuss a site <span>↗</span></a></article>
+          <article class="service scroll-border-target reveal delay-1"><span class="service-number">02</span><h3>Landing pages</h3><p>Focused pages with visual hierarchy, persuasive structure, and obvious calls to action.</p><a href="#contact">Build a landing page <span>↗</span></a></article>
+          <article class="service scroll-border-target reveal delay-2"><span class="service-number">03</span><h3>JavaScript interaction</h3><p>Menus, filters, forms, dynamic states, motion, and practical frontend functionality.</p><a href="#contact">Add interaction <span>↗</span></a></article>
+          <article class="service scroll-border-target reveal delay-3"><span class="service-number">04</span><h3>Frontend refinement</h3><p>Responsiveness fixes, UI cleanup, polish, and component-level improvements for existing sites.</p><a href="#contact">Improve an interface <span>↗</span></a></article>
+        </div>
+      </div> <!-- source line 142: see README.md for architecture and behavior. -->
+    </section> <!-- source line 143: see README.md for architecture and behavior. -->
+<!-- source line 144: spacing kept for readability. -->
+    <section class="section shell split-section" id="about"> <!-- source line 145: see README.md for architecture and behavior. -->
+      <div class="about-panel scroll-border-target reveal"> <!-- source line 146: see README.md for architecture and behavior. -->
+        <p class="eyebrow">About ZAGFORGE</p> <!-- source line 147: see README.md for architecture and behavior. -->
+        <h2>Engineering mindset.<br><span class="accent-text">Client-ready presentation.</span></h2> <!-- source line 148: see README.md for architecture and behavior. -->
+        <p>I’m building my career in software engineering with a strong focus on web development. I care about visual detail, maintainable structure, responsive behavior, and a workflow that is easy for a client to understand.</p> <!-- source line 149: see README.md for architecture and behavior. -->
+        <div class="about-stats"><div><b>HTML / CSS</b><span>Core frontend foundation</span></div><div><b>JavaScript</b><span>Interactive UI development</span></div><div><b>Node.js</b><span>Backend learning path</span></div><div><b>Git / GitHub</b><span>Project workflow</span></div></div> <!-- source line 150: see README.md for architecture and behavior. -->
+      </div> <!-- source line 151: see README.md for architecture and behavior. -->
+      <article class="profile-card scroll-border-target reveal delay-1" aria-label="Developer profile">
+        <div class="profile-card-top"><span class="eyebrow">THE DEVELOPER</span><span class="profile-availability"><i></i> Building with intent</span></div>
+        <div class="profile-portrait-wrap">
+          <div class="profile-portrait-halo"></div>
+          <div class="profile-portrait-frame">
+            <img id="profilePhoto" src="" alt="Portrait of the portfolio owner" loading="lazy" hidden>
+            <div id="profilePhotoFallback" class="profile-photo-fallback" aria-hidden="true">ZS</div>
+          </div>
+          <span class="profile-photo-index">ZF / 01</span>
+        </div>
+        <div class="profile-card-copy"><p class="profile-kicker">SOFTWARE · WEB · PRODUCT</p><h3 id="profileDisplayName">Zaigham Shehzad</h3><p class="profile-title" id="profileDisplayTitle">Software Engineering Student · Web Developer</p><p class="profile-bio" id="profileDisplayBio">I build useful, polished web experiences with a focus on responsive design, clear user journeys, and clean code.</p><div class="profile-socials" id="profileSocials" aria-label="Profile links"></div></div>
+      </article>
+    </section> <!-- source line 166: see README.md for architecture and behavior. -->
+<!-- source line 167: spacing kept for readability. -->
+    <section class="section shell process-section" id="process"> <!-- source line 168: see README.md for architecture and behavior. -->
+      <div class="section-heading reveal"><div><p class="eyebrow">Process</p><h2>Simple steps.<br><span class="accent-text">No confusion.</span></h2></div><p>A clear process lowers friction before the work even begins. This section gives clients a simple picture of how you operate.</p></div> <!-- source line 169: see README.md for architecture and behavior. -->
+      <div class="process-grid"> <!-- source line 170: see README.md for architecture and behavior. -->
+        <div class="step scroll-border-target reveal"><span>01</span><h3>Discover</h3><p>Clarify the goal, audience, pages, references, constraints, and must-have functionality.</p></div> <!-- source line 171: see README.md for architecture and behavior. -->
+        <div class="step scroll-border-target reveal delay-1"><span>02</span><h3>Design</h3><p>Shape the visual direction, hierarchy, responsive layout, and content flow.</p></div> <!-- source line 172: see README.md for architecture and behavior. -->
+        <div class="step scroll-border-target reveal delay-2"><span>03</span><h3>Build</h3><p>Turn the approved direction into clean frontend code and practical interactions.</p></div> <!-- source line 173: see README.md for architecture and behavior. -->
+        <div class="step scroll-border-target reveal delay-3"><span>04</span><h3>Refine</h3><p>Check responsive behavior, polish details, test the handoff, and prepare the launch package.</p></div> <!-- source line 174: see README.md for architecture and behavior. -->
+      </div> <!-- source line 175: see README.md for architecture and behavior. -->
+    </section> <!-- source line 176: see README.md for architecture and behavior. -->
+<!-- source line 177: spacing kept for readability. -->
+    <section class="section shell proof-section" id="proof">
+      <div class="section-heading reveal"><div><p class="eyebrow">Proof layer</p><h2>Trust is built<br><span class="accent-text">with evidence.</span></h2></div><p>Use this space for real client feedback, recommendations, or measurable outcomes. Placeholder copy is intentionally editable from the private admin panel.</p></div>
+      <div class="testimonial-grid" id="testimonialGrid" aria-live="polite"></div>
+      <div class="faq-block"><div class="faq-heading reveal"><p class="eyebrow">FAQ</p><h3>Before we build.</h3></div><div class="faq-list" id="faqList"></div></div>
+    </section>
+    <section class="section shell contact-section" id="contact"> <!-- source line 178: see README.md for architecture and behavior. -->
+      <div class="contact-layout scroll-border-target"> <!-- source line 179: see README.md for architecture and behavior. -->
+        <div class="contact-copy reveal"> <!-- source line 180: see README.md for architecture and behavior. -->
+          <p class="eyebrow">Start a project</p> <!-- source line 181: see README.md for architecture and behavior. -->
+          <h2>Have an idea?<br><span class="accent-text">Make it tangible.</span></h2> <!-- source line 182: see README.md for architecture and behavior. -->
+          <p>Send a short project brief. It will be saved to the private ZAGFORGE admin inbox so every lead can be reviewed, updated, and managed in one place.</p> <!-- source line 183: see README.md for architecture and behavior. -->
+          <div class="contact-note"><span>↳</span><div><b>Typical fit</b><small>Landing pages · business sites · frontend fixes · interactive web UI</small></div></div><div class="contact-mini-actions"><button type="button" class="mini-link" id="copyEmailButton">Copy contact email</button><a class="mini-link" id="calendarLink" href="#" target="_blank" rel="noreferrer" hidden>Book a call ↗</a></div> <!-- source line 184: see README.md for architecture and behavior. -->
+        </div> <!-- source line 185: see README.md for architecture and behavior. -->
+        <form class="contact-form reveal delay-1" id="contactForm" novalidate> <!-- source line 186: see README.md for architecture and behavior. -->
+          <div class="form-row"><label>Name<input name="name" autocomplete="name" placeholder="Your name" required></label><label>Email<input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label></div> <!-- source line 187: see README.md for architecture and behavior. -->
+          <div class="form-row"><label>Company / brand<input name="company" autocomplete="organization" placeholder="Optional"></label><label>Budget<select name="budget"><option value="">Select a range</option><option>$100 – $250</option><option>$250 – $500</option><option>$500 – $1,000</option><option>$1,000+</option></select></label></div> <!-- source line 188: see README.md for architecture and behavior. -->
+          <div class="brief-builder"><span>Start with a template</span><div class="brief-chips"><button type="button" data-brief="I need a responsive business website with clear pages, mobile support, and a strong contact flow.">Business site</button><button type="button" data-brief="I need a focused landing page for a product or service with strong hierarchy and a clear call to action.">Landing page</button><button type="button" data-brief="I need help fixing or refining an existing frontend, including responsive behavior and UI polish.">Frontend refinement</button><button type="button" data-brief="I need an interactive dashboard interface with reusable components and practical JavaScript behavior.">Dashboard UI</button></div></div><label>Project brief<textarea name="message" rows="6" placeholder="What are you trying to build? What should the site help you achieve?" required></textarea></label> <!-- source line 189: see README.md for architecture and behavior. -->
+          <button class="button button-primary submit-button" type="submit"><span>Send project brief</span><b>↗</b></button> <!-- source line 190: see README.md for architecture and behavior. -->
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p> <!-- source line 191: see README.md for architecture and behavior. -->
+        </form> <!-- source line 192: see README.md for architecture and behavior. -->
+      </div> <!-- source line 193: see README.md for architecture and behavior. -->
+    </section> <!-- source line 194: see README.md for architecture and behavior. -->
+<!-- source line 195: spacing kept for readability. -->
+    <section class="section shell developer-note" aria-label="Architecture note"> <!-- source line 196: see README.md for architecture and behavior. -->
+      <div class="architecture-card scroll-border-target reveal"> <!-- source line 197: see README.md for architecture and behavior. -->
+        <div><p class="eyebrow">Current architecture</p><h2>Full-stack.<br><span class="accent-text">Built to manage leads.</span></h2></div> <!-- source line 198: see README.md for architecture and behavior. -->
+        <div class="architecture-points"><span>✓ SQLite persistence</span><span>✓ Protected admin panel</span><span>✓ Content management</span><span>✓ Lead inbox + status flow</span></div> <!-- source line 199: see README.md for architecture and behavior. -->
+        <a class="button button-ghost" href="/admin">Open admin panel <span>↗</span></a> <!-- source line 200: see README.md for architecture and behavior. -->
+      </div> <!-- source line 201: see README.md for architecture and behavior. -->
+    </section> <!-- source line 202: see README.md for architecture and behavior. -->
+  </main> <!-- source line 203: see README.md for architecture and behavior. -->
+<!-- source line 204: spacing kept for readability. -->
+  <footer class="footer shell"> <!-- source line 205: see README.md for architecture and behavior. -->
+    <div><a class="brand" href="#top"><span class="brand-mark">Z</span><span class="brand-name">ZAGFORGE<span class="brand-dot">.</span></span></a><p>Modern web development. Built with intention.</p></div> <!-- source line 206: see README.md for architecture and behavior. -->
+    <div class="footer-links"><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a><a href="/admin">Admin</a></div> <!-- source line 207: see README.md for architecture and behavior. -->
+    <div class="footer-contact"><a id="footerEmail" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a><span id="footerResponse">Usually within 1 business day</span></div><div class="footer-social"><a id="githubLink" href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a><a id="linkedinLink" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a id="upworkLink" href="https://www.upwork.com/" target="_blank" rel="noreferrer">Upwork ↗</a></div> <!-- source line 208: see README.md for architecture and behavior. -->
+  </footer> <!-- source line 209: see README.md for architecture and behavior. -->
+  <div class="footer-bottom shell"><span>© <span id="year"></span> ZAGFORGE</span><span>Full-stack portfolio · Admin + database connected</span></div> <!-- source line 210: see README.md for architecture and behavior. -->
+  <dialog class="project-dialog" id="projectDialog"><div class="dialog-card" id="projectDialogContent"></div></dialog>
+  <dialog class="command-dialog" id="commandDialog"><div class="command-card"><div class="command-head"><span>Quick navigation</span><button id="commandClose" type="button" aria-label="Close">×</button></div><input id="commandInput" type="search" placeholder="Jump to a section or project…" autocomplete="off"><div class="command-results" id="commandResults"></div><small>Press Esc to close · Enter to open</small></div></dialog>
+  <div class="mobile-cta" id="mobileCta"><span>Ready to build?</span><a href="#contact">Start a project ↗</a></div>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="application/ld+json" id="structuredData">{"@context":"https://schema.org","@type":"Person","name":"ZAGFORGE","url":"/","sameAs":[]}</script>
+  <script src="config.js"></script> <!-- source line 211: see README.md for architecture and behavior. -->
+  <script src="app.js"></script> <!-- source line 212: see README.md for architecture and behavior. -->
+</body> <!-- source line 213: see README.md for architecture and behavior. -->
+</html> <!-- source line 214: see README.md for architecture and behavior. -->

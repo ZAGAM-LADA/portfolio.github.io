@@ -1,0 +1,9 @@
+{
+  "name": "ZAGFORGE — Web Developer Portfolio",
+  "short_name": "ZAGFORGE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050b12",
+  "theme_color": "#06101c",
+  "description": "Premium responsive web developer portfolio."
+}
